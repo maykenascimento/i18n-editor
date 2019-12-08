@@ -11,17 +11,13 @@ const routes: Routes = [
     // canActivate: [AuthGuard],
     // children: [
     //   {
-    //     path: 'seller',
-    //     component: SellerComponent
+    //     path: '',
+    //     component: 
     //   },
     //   {
-    //     path: 'seller/:id',
-    //     component: SellerComponent
+    //     path: '/:id',
+    //     component: 
     //   },
-    //   {
-    //     path: 'seller/product/:id',
-    //     component: ProductComponent
-    //   }
     // ]
   },
   {
