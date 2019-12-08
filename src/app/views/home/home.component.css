@@ -1,6 +1,36 @@
-.flag {
+mat-toolbar {
+    height: 50px;
+    background: rgba(0, 181, 149, 1);
+    background-image: radial-gradient( circle farthest-corner at 10% 20%, rgba(0, 93, 133, 1) 0%, rgba(0, 181, 149, 1) 90%);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.main-container, .container {
+    padding: 10px;
+}
+
+.add-project {
+    padding: 20px;
+    text-align: center;
+    display: block;
+}
+
+.flag-icon {
     display: block;
     max-width: 100%;
-    height: auto;
+    height: 20px;
     border-radius: 4px;
+    width: 20px;
+}
+
+.project-item {
+    cursor: pointer;
+    margin: 10px;
+}
+
+.project-icon {
+    width: 100%;
+    min-width: 100%;
+    height: auto;
 }

@@ -1,6 +1,10 @@
-<mat-toolbar color="primary">
+<mat-toolbar>
     <span>i18n Editor</span>
-
+    <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
     <!-- This fills the remaining space of the current row -->
     <span class="frs"></span>
     <button mat-button>Dashboard</button>
@@ -15,11 +19,31 @@
 </mat-toolbar>
 <div class="main-container">
     <h1>Projects</h1>
-    <div class="list-project">
-        <mat-card *ngFor="let project of projects">
-            <div fxLayout="row" fxLayoutAlign="space-around start">
-                <div class="flag"><span class="flag-icon flag-icon-pt flag-icon-squared"></span></div>
+    <div class="list-project" fxLayout="row wrap" fxLayoutAlign="start stretch">
+        <mat-card class="project-item" (click)="openProject(project)">
+            <div class="add-project">
+                <div><mat-icon>add</mat-icon></div>
+                <div>Add project</div>
             </div>
         </mat-card>
+        <div *ngFor="let project of projects" fxFlex.xs="50" fxFlex.sm="33" fxFlex.md="20" fxFlex.lg="15">
+            <mat-card class="project-item" (click)="openProject(project)">
+                <mat-card-header>
+                    <mat-card-title>{{project.title}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <div class="container">
+                        <div class="project-icon"><img src="" alt=""></div>
+                        <div class="project-flags" fxLayout="row" fxLayoutGap="5px" fxLayoutAlign="start start">
+                            <span class="flag-icon flag-icon-{{lang.name}} flag-icon-squared"
+                                *ngFor="let lang of project.languages"></span>
+                        </div>
+                        <div class="project-contributors">
+                            <span class="name-laters"></span>
+                        </div>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
     </div>
 </div>
